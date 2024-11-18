@@ -3,7 +3,10 @@ import {
     concatStrings, 
     toggleBoolean,
     calculateAverage,
-    typesData
+    typesData,
+    unionType,
+    Category,
+    Product
 } from "../../src/basic/type-data";
 
 // primitive data
@@ -46,5 +49,45 @@ describe('Any', function() {
         expect(typesData(true)).toBe("true adalah Boolean");
         expect(typesData("Indra")).toBe("Indra adalah String");
         expect(typesData(null)).toBe("Gak tau ah!")
-    })
+    });
 });
+
+// union type
+describe('Union data type', function() {
+    it('Union', function() {
+        let sample: number | string | boolean = "Indra";
+        console.info(sample);
+
+        sample = true;
+        console.info(sample);
+        
+        sample = 1000;
+        console.info(sample);
+    });
+
+    it('Union lagi', function() {
+        expect(unionType(5)).toBe(7);
+        expect(unionType("indra")).toBe("INDRA");
+        expect(unionType(true)).toBe(false);
+    });
+});
+
+// alias type
+describe('Alias Type', function() {
+    it('Alias', function() {
+        const category: Category = {
+            id: "1",
+            name: "Handphone"
+        };
+        const product: Product = {
+            id: "1",
+            name: "Samsung J12",
+            price: 1000,
+            category: category
+        };
+
+        console.info(category);
+        console.info(product);
+    })
+})
+

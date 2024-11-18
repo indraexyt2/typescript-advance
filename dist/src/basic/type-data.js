@@ -17,3 +17,29 @@ export const calculateAverage = (num) => {
     return Average;
 };
 // any
+export const typesData = (value) => {
+    if (typeof value === "number") {
+        return `${value} adalah Number`;
+    }
+    else if (typeof value === "string") {
+        return `${value} adalah String`;
+    }
+    else if (typeof value === "boolean") {
+        return `${value} adalah Boolean`;
+    }
+    else
+        return "Gak tau ah!";
+};
+// union type
+export const unionType = (value) => {
+    if (typeof value === "number") {
+        return value + 2;
+    }
+    else if (typeof value === "string") {
+        return value.toUpperCase();
+    }
+    else {
+        return !value;
+    }
+    ;
+};

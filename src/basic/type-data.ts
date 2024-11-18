@@ -28,4 +28,28 @@ export const typesData = (value: any): any => {
     } else if (typeof value === "boolean") {
         return `${value} adalah Boolean`;
     }  else return "Gak tau ah!"
-}
+};
+
+// union type
+export const unionType = (value: number | string | boolean) => {
+    if (typeof value === "number") {
+        return value + 2;
+    } else if (typeof value === "string" ) {
+        return value.toUpperCase();
+    } else {
+        return !value;
+    };
+};
+
+// alias
+export type Category = {
+    id: string,
+    name: string
+};
+
+export type Product = {
+    id: string,
+    name: string,
+    price: number,
+    category: Category
+};
